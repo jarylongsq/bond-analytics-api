@@ -39,7 +39,7 @@ def calculate_bond_price(
     w = settle_to_next_coupon / num_days_btw_cpn_dt
     dirty_price = 0
     for i in range(1, num_cpn_period + 1):
-        if i == num_cpn_period + 1:
+        if i == num_cpn_period:
             dirty_price += redemption_value / (1 + yield_per_period/100) ** (i-1 + w)
         dirty_price += coupon / (1 + yield_per_period/100) ** (i-1 + w)
     return dirty_price
